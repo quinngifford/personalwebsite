@@ -19,11 +19,11 @@ const projects = [
     image: "/rocket.png",
   },
   {
-    title: "Traffic Signal Simulation System",
+    title: "OpenGL Traffic Simulation",
     narrative:
       "I built a full traffic intersection simulator in C++ and OpenGL. I drew an intersection with shaders in OpenGL and programmed cars to drive through it with realistic physics in C++. I programmed multiple traffic light control algorithms in order to find the the most efficient one. The system tracks every car's wait time, and the total intersection throughput, and some of the smarter control modes cut total delay by nearly 45% compared to the basic fixed timer. I did this project because I think that a lot of intersections in the US suck and need to be upgraded with smarter software to reduce traffic.",
     tags: ["C", "C++", "OpenGL"],
-    link: "#",
+    link: "https://github.com/quinngifford/OpenGL-traffic-simulator",
     image: "/traffic.gif",
   },
 ]
