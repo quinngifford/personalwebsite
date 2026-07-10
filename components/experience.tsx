@@ -4,15 +4,21 @@ import { Button } from "@/components/ui/button"
 export function Experience() {
   const experiences = [
     {
+      title: "Electrical Systems Engineer Intern",
+      company: "Boeing",
+      period: "June 2026 - Present",
+      description: "",
+    },
+    {
       title: "Software Engineer Intern",
       company: "Alethian",
       period: "June 2025 - Sep 2025",
       description: "",
     },
     {
-      title: "Software Engineer Intern",
+      title: "Contract AI Engineer",
       company: "Scale AI",
-      period: "June 2024 - Sep 2024",
+      period: "June 2024 - June 2025",
       description: "",
     },
     {
