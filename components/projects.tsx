@@ -13,7 +13,7 @@ const projects = [
   {
     title: "Rocket Control Systems",
     narrative:
-      "I built a real-time avionics system for a model rocket using an ESP32 running an RTOS. I designed a PCB in KiCad and then soldered everything together. The rocket communicated with a ground station over the 2.4GHz band through an antenna module. I hooked up an MPU-6050 accelerometer and gyroscope to track the rocket’s motion in real time, then wrote C++ firmware to handle the high-speed physics calculations for its guidance system. On the ground, I used Python and Matplotlib to visualize all the flight data.",
+      "I built a PCB which was used as part of a real-time avionics system for a model rocket using an ESP32 running an RTOS. I designed a PCB in KiCad and then soldered everything together. The rocket communicated with a ground station over the 2.4GHz band through an antenna module. I hooked up an MPU-6050 accelerometer and gyroscope to track the rocket’s motion in real time, then wrote C++ firmware to handle the high-speed physics calculations for its guidance system. On the ground, I used Python and Matplotlib to visualize all the flight data.",
     tags: ["ESP32", "RTOS", "C++", "Python", "Soldering", "KiCad"],
     link: "#",
     image: "/rocket.png",
@@ -25,6 +25,14 @@ const projects = [
     tags: ["C", "C++", "OpenGL"],
     link: "https://github.com/quinngifford/OpenGL-traffic-simulator",
     image: "/traffic.gif",
+  },
+  {
+    title: "Munkey AI",
+    narrative:
+      "My college roommate and are building a full stack AI learning platform where teachers create courses, upload assignments and learning materials, manage grades, and teach students with the help of AI. Uses AI to automatically parse assignments, creating a designated AI chat for every student for each problem, using RAG or manual teacher input to create mappings to specific pages within related learning materials. Provides teachers the ability to customize the AI for every problem, defining the system prompt, resources, and instructional behavior/guidelines. There are more features such as allowing teachers to see student chat history for each problem.",
+    tags: ["Full Stack Development", "TypeScript", "Next.js", "Supabase", "Pinecone"],
+    link: "https://munkeyai.com/",
+    image: "/monkey.png",
   },
 ]
 
