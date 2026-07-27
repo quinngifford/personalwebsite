@@ -5,7 +5,7 @@ const projects = [
   {
     title: "Guitar Hero on FPGA and ESP32",
     narrative:
-      "I recreated Guitar Hero using an FPGA and an ESP32! My CMOD F7 FPGA is hooked up to a 4 LED strip display. Using SystemVerilog I programmed the outputs of the FGPA to control the notes going down the LED strips. At first I just used the buttons on the FPGA to play but I eventually upgraded to a wireless controller! I designed and soldered a custom FPGA to hold my ESP32. I wrote firmware to utilize it's wireless communication power, then hooked the FPGA up to another ESP32 (to receieve the bluetooth signals and transfer them to the FPGA). I wish I took a better video of this project before I took it down... as with all my other projects.",
+      "I recreated Guitar Hero using an FPGA and an ESP32! My CMOD F7 FPGA is hooked up to a 4 LED strip display. Using SystemVerilog I programmed the outputs of the FGPA to control the notes going down the LED strips. At first I just used the buttons on the FPGA to play but I eventually upgraded to a wireless controller! I designed and soldered a custom PCB to hold my ESP32. I wrote firmware to utilize it's wireless communication power, then hooked the FPGA up to another ESP32 (to receieve the bluetooth signals and transfer them to the FPGA). I wish I took a better video of this project before I took it down... as with all my other projects.",
     tags: ["KiCad", "Soldering", "FPGA", "C++", "SystemVerilog"],
     link: "#",
     image: "/guitarhero.gif",
@@ -13,10 +13,10 @@ const projects = [
   {
     title: "Rocket Control Systems",
     narrative:
-      "I built a PCB which was used as part of a real-time avionics system for a model rocket using an ESP32 running an RTOS. I designed a PCB in KiCad and then soldered everything together. The rocket communicated with a ground station over the 2.4GHz band through an antenna module. I hooked up an MPU-6050 accelerometer and gyroscope to track the rocket’s motion in real time, then wrote C++ firmware to handle the high-speed physics calculations for its guidance system. On the ground, I used Python and Matplotlib to visualize all the flight data.",
-    tags: ["ESP32", "RTOS", "C++", "Python", "Soldering", "KiCad"],
+      "I built a real-time model rocket avionics system around the STARLIGHT flight computer, using its RP2040-based platform to handle sensor processing, flight event detection, and data logging. I set up a wireless telemetry link with an antenna module and ground receiver to send flight data to a ground station during flight. I wrote the embedded firmware in C++ and organized the system around real-time tasks for sensor polling, telemetry transmission, and flight logic. On the ground side, I used Python and Matplotlib to display and analyze the incoming flight data.",
+    tags: ["RP2040", "RTOS", "C", "C++", "Python", "Soldering", "KiCad"],
     link: "#",
-    image: "/rocket.png",
+    image: "/Screenshot 2026-07-27 140244.png",
   },
   {
     title: "OpenGL Traffic Simulation",
@@ -29,7 +29,7 @@ const projects = [
   {
     title: "Munkey AI",
     narrative:
-      "My college roommate and are building a full stack AI learning platform where teachers create courses, upload assignments and learning materials, manage grades, and teach students with the help of AI. Uses AI to automatically parse assignments, creating a designated AI chat for every student for each problem, using RAG or manual teacher input to create mappings to specific pages within related learning materials. Provides teachers the ability to customize the AI for every problem, defining the system prompt, resources, and instructional behavior/guidelines. There are more features such as allowing teachers to see student chat history for each problem.",
+      "My college roommate and I are building a full stack AI learning platform where teachers create courses, upload assignments and learning materials, manage grades, and teach students with the help of AI. Uses AI to automatically parse assignments, creating a designated AI chat for every student for each problem, using RAG or manual teacher input to create mappings to specific pages within related learning materials. Provides teachers the ability to customize the AI for every problem, defining the system prompt, resources, and instructional behavior/guidelines. There are more features such as allowing teachers to see student chat history for each problem.",
     tags: ["Full Stack Development", "TypeScript", "Next.js", "Supabase", "Pinecone"],
     link: "https://munkeyai.com/",
     image: "/monkey.png",
