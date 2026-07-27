@@ -16,7 +16,7 @@ const projects = [
       "I built a real-time model rocket avionics system around the STARLIGHT flight computer, using its RP2040-based platform to handle sensor processing, flight event detection, and data logging. I set up a wireless telemetry link with an antenna module and ground receiver to send flight data to a ground station during flight. I wrote the embedded firmware in C++ and organized the system around real-time tasks for sensor polling, telemetry transmission, and flight logic. On the ground side, I used Python and Matplotlib to display and analyze the incoming flight data.",
     tags: ["RP2040", "RTOS", "C", "C++", "Python", "Soldering", "KiCad"],
     link: "#",
-    image: "/Screenshot 2026-07-27 140244.png",
+    image: "/starlight.png",
   },
   {
     title: "OpenGL Traffic Simulation",
