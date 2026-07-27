@@ -5,7 +5,7 @@ const projects = [
   {
     title: "Guitar Hero on FPGA and ESP32",
     narrative:
-      "I recreated Guitar Hero using an FPGA and an ESP32! My CMOD F7 FPGA is hooked up to a 4 LED strip display. Using SystemVerilog I programmed the outputs of the FGPA to control the notes going down the LED strips. At first I just used the buttons on the FPGA to play but I eventually upgraded to a wireless controller! I designed and soldered a custom PCB to hold my ESP32. I wrote firmware to utilize it's wireless communication power, then hooked the FPGA up to another ESP32 (to receieve the bluetooth signals and transfer them to the FPGA). I wish I took a better video of this project before I took it down... as with all my other projects.",
+      "I recreated Guitar Hero using an FPGA and an ESP32! My CMOD F7 FPGA is hooked up to a 4 LED strip display. Using SystemVerilog I programmed the outputs of the FGPA to control the notes going down the LED strips. At first I just used the buttons on the FPGA to play but I eventually upgraded to a wireless controller! I designed and soldered a custom PCB to hold my ESP32. I wrote firmware to utilize it's wireless communication power, then hooked the FPGA up to another ESP32 (to receieve the bluetooth signals and transfer them to the FPGA). This sort of nullified the point of the FPGA performance benefits, but it was still fun to do.",
     tags: ["KiCad", "Soldering", "FPGA", "C++", "SystemVerilog"],
     link: "#",
     image: "/guitarhero.gif",
