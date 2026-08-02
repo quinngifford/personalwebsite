@@ -1,7 +1,19 @@
-import Image from "next/image"
-import { ArrowUpRight } from "lucide-react"
+"use client"
 
-const projects = [
+import { useState } from "react"
+import Image from "next/image"
+import { ArrowUpRight, Cpu, Code2 } from "lucide-react"
+import { SectionHeading } from "@/components/section-heading"
+
+interface Project {
+  title: string
+  narrative: string
+  tags: string[]
+  link: string
+  image: string
+}
+
+const hardwareProjects: Project[] = [
   {
     title: "Guitar Hero on FPGA and ESP32",
     narrative:
@@ -19,6 +31,33 @@ const projects = [
     image: "/starlight.png",
   },
   {
+    title: "3 Axis Robot Arm with Parkinsons",
+    narrative:
+      "My Junior Design Group and I buit a 3 axis robot arm using cheap servos to write and draw on paper based on GCODE commands. I built a graphical user interface to allow the user to input GCODE commands, which would automatically do inverse kinematics to create arm movements. We had some mechnaical issues so we called it the Parkinsons Arm. We even tried to balance the arm with shot glasses...",
+    tags: ["ESP32", "CAD", "C++", "Python", "Soldering"],
+    link: "#",
+    image: "/parkinson.gif",
+  },
+]
+
+const softwareProjects: Project[] = [
+  {
+    title: "Munkey AI",
+    narrative:
+      "My college roommate and I are building a full stack AI learning platform where teachers create courses, upload assignments and learning materials, manage grades, and teach students with the help of AI. Uses AI to automatically parse assignments, creating a designated AI chat for every student for each problem, using RAG or manual teacher input to create mappings to specific pages within related learning materials. Provides teachers the ability to customize the AI for every problem, defining the system prompt, resources, and instructional behavior/guidelines. There are more features such as allowing teachers to see student chat history for each problem.",
+    tags: ["Full Stack Development", "TypeScript", "Next.js", "Supabase", "Pinecone", "OpenAI"],
+    link: "https://munkeyai.com/",
+    image: "/monkey.png",
+  },
+  {
+    title: "Application God",
+    narrative:
+      "I built a scaleable full stack app that allows anyone to mass apply to jobs. The app saves the users answers to every potential application question, and with the click of a button, searches for jobs all over the internet and applies to them automatically. The app uses a headless browser to parse, comprehend, and fill out the application forms, and can even handle CAPTCHAs. The app also has a dashboard where users can see the status of their applications, allowing for manual intervention if every fallback method fails. Fallback methods include semantic similarity and AI processing with Claude if an application question can't be mapped to an answer.",
+    tags: ["Full Stack Development", "TypeScript", "Next.js", "Render", "Resend", "Claude"],
+    link: "https://autoapply-demo.onrender.com/",
+    image: "/appgod.png",
+  },
+  {
     title: "OpenGL Traffic Simulation",
     narrative:
       "I built a full traffic intersection simulator in C++ and OpenGL. I drew an intersection with shaders in OpenGL and programmed cars to drive through it with realistic physics in C++. I programmed multiple traffic light control algorithms in order to find the the most efficient one. The system tracks every car's wait time, and the total intersection throughput, and some of the smarter control modes cut total delay by nearly 45% compared to the basic fixed timer. I did this project because I think that a lot of intersections in the US suck and need to be upgraded with smarter software to reduce traffic.",
@@ -26,67 +65,132 @@ const projects = [
     link: "https://github.com/quinngifford/OpenGL-traffic-simulator",
     image: "/traffic.gif",
   },
+  
+]
+
+const categories = [
   {
-    title: "Munkey AI",
-    narrative:
-      "My college roommate and I are building a full stack AI learning platform where teachers create courses, upload assignments and learning materials, manage grades, and teach students with the help of AI. Uses AI to automatically parse assignments, creating a designated AI chat for every student for each problem, using RAG or manual teacher input to create mappings to specific pages within related learning materials. Provides teachers the ability to customize the AI for every problem, defining the system prompt, resources, and instructional behavior/guidelines. There are more features such as allowing teachers to see student chat history for each problem.",
-    tags: ["Full Stack Development", "TypeScript", "Next.js", "Supabase", "Pinecone"],
-    link: "https://munkeyai.com/",
-    image: "/monkey.png",
+    id: "hardware",
+    label: "Hardware",
+    blurb: "PCBs, microcontrollers, and firmware",
+    icon: Cpu,
+    projects: hardwareProjects,
+  },
+  {
+    id: "software",
+    label: "Software",
+    blurb: "Full stack builds, simulations, game development",
+    icon: Code2,
+    projects: softwareProjects,
   },
 ]
 
-export function Projects() {
+function ProjectList({ projects }: { projects: Project[] }) {
   return (
-    <section id="projects" className="container mx-auto px-6 py-20">
-      <div className="max-w-4xl mx-auto mb-16">
-        <h2 className="text-4xl md:text-4xl font-bold mb-4">Project Examples</h2>
-      </div>
+    <div className="space-y-28">
+      {projects.map((project, index) => (
+        <article key={project.title} className="group">
+          <a href={project.link} className="block space-y-8">
+            {/* Large immersive image */}
+            <div className="relative w-full overflow-hidden rounded-lg border border-border/60 bg-secondary">
+              <Image
+                src={project.image || "/placeholder.svg"}
+                alt={project.title}
+                width={1200}
+                height={800}
+                className="w-full h-auto transition-transform duration-700 group-hover:scale-105"
+                unoptimized
+                priority={index === 0}
+              />
+            </div>
 
-      <div className="max-w-4xl mx-auto space-y-32">
-        {projects.map((project, index) => (
-          <article key={index} className="group">
-            <a href={project.link} className="block space-y-8">
-              {/* Large immersive image */}
-              <div className="relative w-full overflow-hidden rounded-lg bg-secondary">
-                <Image
-                  src={project.image || "/placeholder.svg"}
-                  alt={project.title}
-                  width={1200}
-                  height={800}
-                  className="w-full h-auto transition-transform duration-700 group-hover:scale-105"
-                  unoptimized
-                />
-              </div>
+            {/* Project title below image */}
+            <div className="flex items-center justify-between gap-4">
+              <h4 className="text-2xl md:text-3xl font-semibold text-foreground group-hover:text-accent transition-colors">
+                {project.title}
+              </h4>
+              <ArrowUpRight className="w-6 h-6 flex-shrink-0 text-muted-foreground group-hover:text-accent transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />
+            </div>
 
-              {/* Project title below image */}
-              <div className="flex items-center justify-between">
-                <h3 className="text-2xl md:text-3xl font-semibold text-foreground group-hover:text-accent transition-colors">
-                  {project.title}
-                </h3>
-                <ArrowUpRight className="w-6 h-6 text-muted-foreground group-hover:text-accent transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />
-              </div>
+            {/* Narrative text - essay style */}
+            <p className="text-lg leading-relaxed text-muted-foreground text-pretty">{project.narrative}</p>
 
-              {/* Narrative text - essay style */}
-              <p className="text-lg leading-relaxed text-muted-foreground text-pretty">{project.narrative}</p>
+            {/* Tags */}
+            <div className="flex flex-wrap gap-2 pt-2">
+              {project.tags.map((tag, tagIndex) => (
+                <span
+                  key={tagIndex}
+                  className="text-xs px-3 py-1 rounded-full border border-border/60 bg-secondary/50 text-muted-foreground font-mono transition-colors group-hover:border-accent/30"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </a>
+        </article>
+      ))}
+    </div>
+  )
+}
 
-              {/* Tags */}
-              <div className="flex flex-wrap gap-2 pt-2">
-                {project.tags.map((tag, tagIndex) => (
-                  <span
-                    key={tagIndex}
-                    className="text-xs px-3 py-1 rounded-full bg-secondary/50 text-muted-foreground font-mono"
-                  >
-                    {tag}
+export function Projects() {
+  const [activeId, setActiveId] = useState(categories[0].id)
+  const active = categories.find((category) => category.id === activeId) ?? categories[0]
+
+  return (
+    <section id="projects" className="container mx-auto px-6 py-24">
+      <div className="max-w-5xl mx-auto">
+        <SectionHeading index="03 / PROJECTS" title="Project Examples" />
+
+        {/* Tab switcher */}
+        <div className="mb-14 flex flex-wrap items-center gap-4">
+          <div
+            role="tablist"
+            aria-label="Project categories"
+            className="inline-flex rounded-xl border border-border bg-secondary/30 p-1"
+          >
+            {categories.map((category) => {
+              const Icon = category.icon
+              const isActive = category.id === active.id
+
+              return (
+                <button
+                  key={category.id}
+                  type="button"
+                  role="tab"
+                  id={`tab-${category.id}`}
+                  aria-selected={isActive}
+                  aria-controls={`panel-${category.id}`}
+                  onClick={() => setActiveId(category.id)}
+                  className={`flex items-center gap-2.5 rounded-lg px-5 py-2.5 text-sm font-medium transition-all ${
+                    isActive
+                      ? "bg-background text-foreground shadow-sm"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  <Icon className={`h-4 w-4 transition-colors ${isActive ? "text-accent" : ""}`} />
+                  {category.label}
+                  <span className="font-mono text-[11px] text-muted-foreground/60">
+                    {String(category.projects.length).padStart(2, "0")}
                   </span>
-                ))}
-              </div>
-            </a>
+                </button>
+              )
+            })}
+          </div>
 
-            {/* Subtle divider between projects */}
-            {index < projects.length - 1 && <div className="mt-32 border-t border-border/30" />}
-          </article>
-        ))}
+          {active.blurb && <p className="text-sm text-muted-foreground">{active.blurb}</p>}
+        </div>
+
+        {/* Panel — keyed so it re-mounts and replays the fade-in on switch */}
+        <div
+          key={active.id}
+          id={`panel-${active.id}`}
+          role="tabpanel"
+          aria-labelledby={`tab-${active.id}`}
+          className="animate-rise"
+        >
+          <ProjectList projects={active.projects} />
+        </div>
       </div>
     </section>
   )
