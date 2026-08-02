@@ -5,10 +5,10 @@ const galleryImages = [
   // Spans tile into a clean 4x3 grid on desktop, plain 2-up on mobile
   { src: "/IMG_5274.jpg", alt: "img1", className: "sm:col-span-2 sm:row-span-2" },
   { src: "/IMG_5779.JPEG", alt: "img2", className: "sm:col-span-2" },
+  { src: "/IMG_5572.jpg", alt: "img5", className: "sm:col-span-2" },
   { src: "/girlfriend.JPEG", alt: "img3", className: "" },
   { src: "/IMG_7446.jpg", alt: "img4", className: "" },
-  { src: "/IMG_5572.jpg", alt: "img5", className: "sm:col-span-2" },
-  { src: "/IMG_5687.JPEG", alt: "img6", className: "sm:col-span-2" },
+  { src: "/IMG_5488.jpg", alt: "img6", className: "sm:col-span-2" },
 ]
 
 export function Gallery() {

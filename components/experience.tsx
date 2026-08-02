@@ -64,7 +64,7 @@ export function Experience() {
           subtitle=""
           action={
             <Button size="lg" asChild>
-              <a href="/cv 2025-6 (14).pdf" download>
+              <a href="/cv 2025-6 (15).pdf" download>
                 <Download className="mr-2 h-5 w-5" />
                 Download Resume
               </a>
