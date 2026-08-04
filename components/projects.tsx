@@ -25,7 +25,7 @@ const hardwareProjects: Project[] = [
   {
     title: "Model Rocket Flight Computer",
     narrative:
-      "I built a real-time model rocket avionics system in two different varitions, one using a bare metal STM32 chip setup, and the other around the STARLIGHT flight computer, using its RP2040-based platform. The system handles sensor processing, flight data computation, flight event detection, and data logging. I wrote the embedded firmware in C++ and organized the system around real-time tasks with RTOS for sensor polling, calculations, and flight logic. After flights, I used Python and Matplotlib to display and analyze the flight data over time.",
+      "I built a real-time model rocket avionics system in two different varitions, one using a bare metal STM32 chip setup (as seen above), and the other around the STARLIGHT flight computer, using its RP2040-based platform. The system handles sensor processing, flight data computation, flight event detection, and data logging. I designed an extremely compact PCB and soldered it with the help of the rocket propulsion team I was working with. I wrote the embedded firmware in C++ and organized the system around real-time tasks with RTOS for sensor polling, calculations, and flight logic. After flights, I used Python and Matplotlib to display and analyze the flight data over time.",
     tags: ["RP2040", "RTOS", "C", "C++", "Python", "Soldering", "KiCad"],
     link: "#",
     image: "/flight.png",
