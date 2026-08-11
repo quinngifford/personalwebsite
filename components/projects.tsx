@@ -79,6 +79,14 @@ const projects: Project[] = [
     link: "#",
     image: "/parkinson.gif",
   },
+  {
+    title: "Range Sensor Module",
+    narrative:
+      "",
+    tags: ["ESP32", "KiCad", "C++"],
+    link: "#",
+    image: "/IMG_5944.JPEG",
+  },
 ]
 
 function ProjectCard({ project, priority }: { project: Project; priority: boolean }) {
