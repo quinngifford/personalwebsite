@@ -16,20 +16,44 @@ interface Project {
 // One combined list — hardware and software interleaved so the range shows at a glance.
 const projects: Project[] = [
   {
+    title: "Lego Building Simulator",
+    narrative:
+      "Build legos in a 3D space using purely C++ and OpenGL.",
+    tags: ["C++", "OpenGL", "3D Graphics"],
+    link: "https://github.com/quinngifford/Lego-Building-Simulation",
+    image: "/LEGOs.gif",
+  },
+  {
+    title: "Rocket Control Systems",
+    narrative:
+      "I built a real-time model rocket avionics system using a bare metal STM32 setup. The system handles sensor processing, flight data computation, flight event detection, and data logging. I designed a compact PCB and soldered it with the help of the rocket propulsion team I was working with. I wrote the embedded firmware in C++ and organized the system around real-time tasks with RTOS for sensor polling, calculations, and flight logic. After flights, I used Python and Matplotlib to display and analyze the flight data over time.",
+    tags: ["RP2040", "RTOS", "C", "C++", "Python", "Soldering", "KiCad"],
+    link: "#",
+    image: "/rocketpcb.png",
+  },
+  {
     title: "Munkey AI",
     narrative:
       "My college roommate and I are building a full stack AI learning platform where teachers create courses, upload assignments and learning materials, manage grades, and teach students with the help of AI. Uses AI to automatically parse assignments, creating a designated AI chat for every student for each problem, using RAG or manual teacher input to create mappings to specific pages within related learning materials. Provides teachers the ability to customize the AI for every problem, defining the system prompt, resources, and instructional behavior/guidelines. There are more features such as allowing teachers to see student chat history for each problem.",
     tags: ["Full Stack Development", "TypeScript", "Next.js", "Supabase", "Pinecone", "OpenAI"],
     link: "https://munkeyai.com/",
-    image: "/munkey2.png",
+    image: "/monkey.png",
   },
   {
     title: "Guitar Hero on FPGA and ESP32",
     narrative:
-      "I recreated Guitar Hero using an FPGA and an ESP32! My CMOD F7 FPGA is hooked up to a 4 LED strip display. Using SystemVerilog I programmed the outputs of the FGPA to control the notes going down the LED strips. At first I just used the buttons on the FPGA to play but I eventually upgraded to a wireless controller! I designed and soldered a custom PCB to hold my ESP32. I wrote firmware to utilize it's wireless communication power, then hooked the FPGA up to another ESP32 (to receieve the bluetooth signals and transfer them to the FPGA). This sort of nullified the point of the FPGA performance benefits, but it was still fun to do.",
+      "Recreated Guitar Hero using a CMOD F7 FPGA. The FPGA is hooked up to a 4 LED strip display. Using SystemVerilog I programmed the outputs of the FGPA to control the notes going down the LED strips. At first I just used the buttons on the FPGA to play but I eventually upgraded to a wireless controller! I designed and soldered a custom PCB to hold my ESP32. I wrote firmware to utilize it's wireless communication power, then hooked the FPGA up to another ESP32 (to receieve the bluetooth signals and transfer them to the FPGA). This sort of nullified the point of the FPGA performance benefits, but it was still fun to do.",
     tags: ["KiCad", "Soldering", "FPGA", "C++", "SystemVerilog"],
     link: "#",
     image: "/guitarhero.gif",
+  },
+  {
+    title: "Beatmap Generator",
+    narrative:
+      "Automatic beatmap generator that analyzes audio and produces playable rhythm-game charts across multiple difficulty levels. The system uses digital signal processing techniques to detect musical onsets, estimate tempo, track beats, classify percussion, and assign notes to playable lanes with precise timing. It generates JSON, CSV, and osu!mania-compatible charts. The pipeline achieves sub-millisecond timing accuracy on percussive test tracks and processes audio at roughly 200× real time.",
+    tags: ["Python", "Digital Signal Processing", "Audio Analysis"],
+    link: "https://github.com/quinngifford/Beatmap-Generator",
+    image: "/beatmap.gif",
   },
   {
     title: "Application God",
@@ -38,14 +62,6 @@ const projects: Project[] = [
     tags: ["Full Stack Development", "TypeScript", "Next.js", "Render", "Resend", "Claude"],
     link: "https://autoapply-demo.onrender.com/",
     image: "/appgod2.png",
-  },
-  {
-    title: "Rocket Control Systems",
-    narrative:
-      "I built a real-time model rocket avionics system around the STARLIGHT flight computer, using its RP2040-based platform to handle sensor processing, flight event detection, and data logging. I set up a wireless telemetry link with an antenna module and ground receiver to send flight data to a ground station during flight. I wrote the embedded firmware in C++ and organized the system around real-time tasks for sensor polling, telemetry transmission, and flight logic. On the ground side, I used Python and Matplotlib to display and analyze the incoming flight data.",
-    tags: ["RP2040", "RTOS", "C", "C++", "Python", "Soldering", "KiCad"],
-    link: "#",
-    image: "/starlight.png",
   },
   {
     title: "OpenGL Traffic Simulation",
@@ -58,7 +74,7 @@ const projects: Project[] = [
   {
     title: "Three Axis Robot Arm with Parkinsons",
     narrative:
-      "My Junior Design Group and I buit a 3 axis robot arm using cheap servos to write and draw on paper based on GCODE commands. I built a graphical user interface to allow the user to input GCODE commands, which would automatically do inverse kinematics to create arm movements. We had some mechnaical issues so we called it the Parkinsons Arm. We even tried to balance the arm with shot glasses...",
+      "My Junior Design Group and I buit a 3 axis robot arm using cheap servos to write and draw on paper based on GCODE commands. I built a graphical user interface to allow the user to input GCODE commands, which would automatically do inverse kinematics to create arm movements. We had some mechnaical issues so we called it Parkinsons Arm",
     tags: ["ESP32", "CAD", "C++", "Python", "Soldering"],
     link: "#",
     image: "/parkinson.gif",
