@@ -1,6 +1,7 @@
 import { Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { SectionHeading } from "@/components/section-heading"
+import { StickerBoard } from "@/components/sticker-board"
 
 const experiences = [
   {
@@ -72,36 +73,41 @@ export function Experience() {
           }
         />
 
-        <div className="relative">
-          {/* Continuous rail behind the entries */}
-          <div className="absolute left-0 top-2 bottom-2 w-px bg-gradient-to-b from-border via-border to-transparent" />
+        <div className="grid items-start gap-12 lg:grid-cols-[1.5fr_1fr] lg:gap-10">
+          <div className="relative">
+            {/* Continuous rail behind the entries */}
+            <div className="absolute left-0 top-2 bottom-2 w-px bg-gradient-to-b from-border via-border to-transparent" />
 
-          <div className="space-y-14">
-            {experiences.map((exp, index) => (
-              <div key={index} className="group relative pl-8">
-                <span className="absolute left-0 top-2.5 h-2.5 w-2.5 -translate-x-1/2 rounded-full border-2 border-border bg-background transition-colors group-hover:border-accent group-hover:bg-accent" />
+            <div className="space-y-14">
+              {experiences.map((exp, index) => (
+                <div key={index} className="group relative pl-8">
+                  <span className="absolute left-0 top-2.5 h-2.5 w-2.5 -translate-x-1/2 rounded-full border-2 border-border bg-background transition-colors group-hover:border-accent group-hover:bg-accent" />
 
-                <div className="space-y-2 mb-4">
-                  <div className="flex items-baseline gap-3">
-                    <span className="font-mono text-[11px] text-muted-foreground/60">
-                      {String(experiences.length - index).padStart(2, "0")}
-                    </span>
-                    <h3 className="text-2xl font-semibold text-foreground transition-colors group-hover:text-accent">
-                      {exp.title}
-                    </h3>
+                  <div className="space-y-2 mb-4">
+                    <div className="flex items-baseline gap-3">
+                      <span className="font-mono text-[11px] text-muted-foreground/60">
+                        {String(experiences.length - index).padStart(2, "0")}
+                      </span>
+                      <h3 className="text-2xl font-semibold text-foreground transition-colors group-hover:text-accent">
+                        {exp.title}
+                      </h3>
+                    </div>
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 pl-8">
+                      <p className="text-lg text-accent font-medium">{exp.company}</p>
+                      <span className="hidden sm:inline text-muted-foreground">•</span>
+                      <span className="font-mono text-sm text-muted-foreground">{exp.period}</span>
+                    </div>
                   </div>
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 pl-8">
-                    <p className="text-lg text-accent font-medium">{exp.company}</p>
-                    <span className="hidden sm:inline text-muted-foreground">•</span>
-                    <span className="font-mono text-sm text-muted-foreground">{exp.period}</span>
-                  </div>
+                  {exp.description && (
+                    <p className="pl-8 text-base text-muted-foreground leading-relaxed">{exp.description}</p>
+                  )}
                 </div>
-                {exp.description && (
-                  <p className="pl-8 text-base text-muted-foreground leading-relaxed">{exp.description}</p>
-                )}
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
+
+          {/* Company stickers filling the space beside the timeline */}
+          <StickerBoard />
         </div>
       </div>
 

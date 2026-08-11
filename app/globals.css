@@ -156,6 +156,17 @@
     mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
   }
 
+  /* Fridge-magnet stickers: tilt comes from --sticker-rotate, hover straightens and lifts */
+  .sticker {
+    transform: rotate(var(--sticker-rotate, 0deg));
+    transition:
+      transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+      filter 0.35s ease;
+  }
+  .sticker:hover {
+    transform: rotate(0deg) translateY(-6px) scale(1.05);
+  }
+
   .animate-marquee {
     animation: marquee 45s linear infinite;
   }
@@ -221,5 +232,8 @@
   .animate-rise,
   .animate-pulse-dot {
     animation: none !important;
+  }
+  .sticker {
+    transition: none;
   }
 }
