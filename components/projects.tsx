@@ -27,8 +27,8 @@ const projects: Project[] = [
     title: "Model Rocket Flight Computer",
     narrative:
       "I built a real-time model rocket avionics system using a bare metal STM32 setup. The system handles sensor processing, flight data computation, flight event detection, and data logging. I designed a compact PCB and soldered it with the help of the rocket propulsion team I was working with. I wrote the embedded firmware in C++ and organized the system around real-time tasks with RTOS for sensor polling, calculations, and flight logic. After flights, I used Python and Matplotlib to display and analyze the flight data over time.",
-    tags: ["RP2040", "RTOS", "C", "C++", "Python", "Soldering", "KiCad"],
-    link: "#",
+    tags: ["RP2040", "RTOS", "C", "Python", "Soldering", "KiCad"],
+    link: "https://github.com/quinngifford/STM32-Rocket-Computer",
     image: "/rocketpcb.png",
   },
   {
