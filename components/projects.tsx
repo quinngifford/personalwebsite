@@ -32,17 +32,17 @@ const projects: Project[] = [
     image: "/rocketpcb.png",
   },
   {
-    title: "Munkey AI",
+    title: "OpenGL Traffic Simulation",
     narrative:
-      "My college roommate and I are building a full stack AI learning platform where teachers create courses, upload assignments and learning materials, manage grades, and teach students with the help of AI. Uses AI to automatically parse assignments, creating a designated AI chat for every student for each problem, using RAG or manual teacher input to create mappings to specific pages within related learning materials. Provides teachers the ability to customize the AI for every problem, defining the system prompt, resources, and instructional behavior/guidelines. There are more features such as allowing teachers to see student chat history for each problem.",
-    tags: ["Full Stack Development", "TypeScript", "Next.js", "Supabase", "Pinecone", "OpenAI"],
-    link: "https://munkeyai.com/",
-    image: "/monkey.png",
+      "I built a full traffic intersection simulator in C++ and OpenGL. I drew an intersection with shaders in OpenGL and programmed cars to drive through it with realistic physics in C++. I programmed multiple traffic light control algorithms in order to find the the most efficient one. The system tracks every car's wait time, and the total intersection throughput. I did this project because I think that a lot of intersections in the US suck and need to be upgraded with smarter software to reduce traffic. There are two versions of this project, one that I wrote by hand in 2023, and a revamped version with Claude. (Claude mogged me so bad)",
+    tags: ["C", "C++", "OpenGL"],
+    link: "https://github.com/quinngifford/OpenGL-traffic-simulator",
+    image: "/traffic2.gif",
   },
   {
     title: "Guitar Hero on FPGA and ESP32",
     narrative:
-      "Recreated Guitar Hero using a CMOD F7 FPGA. The FPGA is hooked up to a 4 LED strip display. Using SystemVerilog I programmed the outputs of the FGPA to control the notes going down the LED strips. At first I just used the buttons on the FPGA to play but I eventually upgraded to a wireless controller! I designed and soldered a custom PCB to hold my ESP32. I wrote firmware to utilize it's wireless communication power, then hooked the FPGA up to another ESP32 (to receieve the bluetooth signals and transfer them to the FPGA). This sort of nullified the point of the FPGA performance benefits, but it was still fun to do.",
+      "Recreated Guitar Hero using a CMOD F7 FPGA. The FPGA is hooked up to a 4 LED strip display. Using SystemVerilog I programmed the outputs of the FGPA to control the notes going down the LED strips. At first I just used the buttons on the FPGA to play but I eventually upgraded to a wireless controller! I designed and soldered a custom PCB to hold my ESP32. I wrote firmware to handle button inputs andutilize it's wireless communication power.",
     tags: ["KiCad", "Soldering", "FPGA", "C++", "SystemVerilog"],
     link: "#",
     image: "/guitarhero.gif",
@@ -58,23 +58,23 @@ const projects: Project[] = [
   {
     title: "Application God",
     narrative:
-      "I built a scaleable full stack app that allows anyone to mass apply to jobs. The app saves the users answers to every potential application question, and with the click of a button, searches for jobs all over the internet and applies to them automatically. The app uses a headless browser to parse, comprehend, and fill out the application forms, and can even handle CAPTCHAs. The app also has a dashboard where users can see the status of their applications, allowing for manual intervention if every fallback method fails. Fallback methods include semantic similarity and AI processing with Claude if an application question can't be mapped to an answer.",
+      "I built a scaleable full stack app that allows anyone to pay to mass apply to jobs without touching a single application form. The app saves the users answers to every potential application question, and with the click of a button, searches for jobs all over the internet and applies to them automatically. The app uses a headless browser to parse, comprehend, and fill out the application forms, and can even handle CAPTCHAs. The app also has a dashboard where users can see the status of their applications, allowing for manual intervention if every fallback method fails. Fallback methods include semantic similarity and AI processing with Claude if an application question can't be mapped to an answer.",
     tags: ["Full Stack Development", "TypeScript", "Next.js", "Render", "Resend", "Claude"],
     link: "https://autoapply-demo.onrender.com/",
     image: "/appgod2.png",
   },
   {
-    title: "OpenGL Traffic Simulation",
+    title: "Munkey AI",
     narrative:
-      "I built a full traffic intersection simulator in C++ and OpenGL. I drew an intersection with shaders in OpenGL and programmed cars to drive through it with realistic physics in C++. I programmed multiple traffic light control algorithms in order to find the the most efficient one. The system tracks every car's wait time, and the total intersection throughput, and some of the smarter control modes cut total delay by nearly 45% compared to the basic fixed timer. I did this project because I think that a lot of intersections in the US suck and need to be upgraded with smarter software to reduce traffic.",
-    tags: ["C", "C++", "OpenGL"],
-    link: "https://github.com/quinngifford/OpenGL-traffic-simulator",
-    image: "/traffic.gif",
+      "My college roommate and I are building a full stack AI learning platform where teachers create courses, upload assignments and learning materials, manage grades, and teach students with the help of AI. Uses AI to automatically parse assignments, creating a designated AI chat for every student for each problem, using RAG or manual teacher input to create mappings to specific pages within related learning materials. Provides teachers the ability to customize the AI for every problem, defining the system prompt, resources, and instructional behavior/guidelines. There are more features such as allowing teachers to see student chat history for each problem.",
+    tags: ["Full Stack Development", "TypeScript", "Next.js", "Supabase", "Pinecone", "OpenAI"],
+    link: "https://munkeyai.com/",
+    image: "/monkey.png",
   },
   {
     title: "Three Axis Robot Arm with Parkinsons",
     narrative:
-      "My Junior Design Group and I buit a 3 axis robot arm using cheap servos to write and draw on paper based on GCODE commands. I built a graphical user interface to allow the user to input GCODE commands, which would automatically do inverse kinematics to create arm movements. We had some mechnaical issues so we called it Parkinsons Arm",
+      "My Junior Design Group and I buit a 3 axis robot arm using cheap servos to write and draw on paper based on GCODE commands. I built a graphical user interface to allow the user to input GCODE commands, which would automatically do inverse kinematics to create arm movements. We had some mechnaical issues so we called it Parkinsons Arm.",
     tags: ["ESP32", "CAD", "C++", "Python", "Soldering"],
     link: "#",
     image: "/parkinson.gif",
@@ -82,7 +82,7 @@ const projects: Project[] = [
   {
     title: "Range Sensor Module",
     narrative:
-      "",
+      "Simple Project for my Junior Design class.",
     tags: ["ESP32", "KiCad", "C++"],
     link: "#",
     image: "/IMG_5944.JPEG",
